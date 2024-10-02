@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BugZapp Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+
+      body {
+        font-family: "Inter", sans-serif;
+      }
+
+      /* Custom glassmorphism styles */
+      .glass-effect {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        border-radius: 16px;
+        background-clip: padding-box;
+      }
+
+      /* Optional shiny/glossy effect */
+      .shiny-effect {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .shiny-effect:before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(
+          135deg,
+          rgba(255, 255, 255, 0.2) 0%,
+          rgba(255, 255, 255, 0) 70%
+        );
+        transform: rotate(45deg);
+        pointer-events: none;
+        animation: shiny 6s ease-in-out infinite;
+      }
+
+      @keyframes shiny {
+        0% {
+          transform: translateX(-100%) rotate(45deg);
+        }
+        100% {
+          transform: translateX(200%) rotate(45deg);
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-[#0A1F35] h-screen flex items-center justify-center relative">
+    <!-- Random floating background elements -->
+    <div
+      class="absolute top-10 left-16 bg-[#5A7FAA] w-6 h-6 rounded-full"
+    ></div>
+    <div
+      class="absolute top-20 right-20 bg-[#9DBDD9] w-8 h-8 rounded-full"
+    ></div>
+    <div
+      class="absolute bottom-32 left-32 bg-[#F0CBBF] w-5 h-5 rounded-full"
+    ></div>
+    <div
+      class="absolute bottom-24 right-32 bg-[#AAB9D3] w-10 h-10 rounded-full"
+    ></div>
+    <div class="absolute top-5 left-60 bg-[#809BC9] w-7 h-7 rounded-full"></div>
+    <div
+      class="absolute top-40 right-40 bg-[#96AFCF] w-4 h-4 rounded-full"
+    ></div>
+    <div
+      class="absolute bottom-16 left-10 bg-[#4A708B] w-12 h-12 rounded-full"
+    ></div>
+    <div
+      class="absolute top-44 right-72 bg-[#3A586E] w-3 h-3 rounded-full"
+    ></div>
+    <div
+      class="absolute bottom-20 left-44 bg-[#E5AFAF] w-9 h-9 rounded-full"
+    ></div>
+    <div
+      class="absolute bottom-56 right-56 bg-[#B0CCD7] w-6 h-6 rounded-full"
+    ></div>
+    <div
+      class="absolute top-52 left-72 bg-[#FFCCD2] w-7 h-7 rounded-full"
+    ></div>
+
+    <!-- Main login container with glassmorphism and shiny effect -->
+    <div
+      class="glass-effect shiny-effect p-8 rounded-lg shadow-xl max-w-md w-full z-10 text-center relative"
+    >
+      <div class="text-4xl font-bold text-[#F05D62] mb-4">
+        Bug<span class="text-[#E2E8F0]">Zapp</span>
+      </div>
+
+      <form class="space-y-6">
+        <!-- Login options -->
+        <div class="space-y-4">
+          <!-- Apple Connect Button -->
+          <button
+            class="w-full bg-black text-white py-3 rounded-lg flex items-center justify-center transition hover:bg-[#2B3E67]"
+          >
+            <!-- Apple logo (SVG) -->
+            <svg
+              class="w-6 h-6 mr-2"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 384 512"
+              fill="white"
+            >
+              <path
+                d="M318.7 268.1c-.1-36.5 16.1-63.7 49.5-84.3-18.5-27-46.7-42.2-89.3-47.6-37.5-4.7-77.8 22.3-92.7 22.3-16.3 0-54.2-21.6-84-21.6C58.3 137 0 196.4 0 286c0 29.4 6.2 60.9 18.8 94.2 16.8 45.6 77.7 156.8 140.7 154.4 27.2-.7 46.3-18.8 84.8-18.8 38.3 0 55.4 18.8 85.1 18.8 63.3-2.3 120-103.5 136.5-149.2-89.7-42.7-106.2-123.5-106.2-117.3zM243.9 61.9C266.9 37 277.6 4.8 270.5 0c-30.4 2.4-66.5 22.5-87.7 48.3-19.1 23-28.4 51.3-26.1 81.4 33.5 2.6 66.5-16.9 87.2-48.8z"
+              />
+            </svg>
+
+            Connected with Apple
+          </button>
+
+          <!-- Other Connect Button -->
+          <button
+            class="w-full bg-[#5974AA] text-white py-3 rounded-lg flex items-center justify-center transition hover:bg-[#40578C]"
+          >
+            <!-- Globe icon (Heroicons) -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="white"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              class="w-6 h-6 mr-2"
+            >
+              <path
+                d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 18a8 8 0 118-8 8.01 8.01 0 01-8 8zm-1-10.95V4a8 8 0 018 8h-4.05a4 4 0 00-3.95-3.95z"
+              ></path>
+            </svg>
+            Other Login
+          </button>
+        </div>
+
+        <!-- Login button -->
+        <button
+          class="w-full bg-[#E84D4F] text-white py-3 rounded-lg font-semibold transition hover:bg-[#C93C3C]"
+        >
+          Login
+        </button>
+      </form>
+    </div>
+  </body>
+</html>
